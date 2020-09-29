@@ -62,7 +62,6 @@ def generate_model_archive():
 
     logging.basicConfig(format='%(levelname)s - %(message)s')
     args = ArgParser.export_model_args_parser().parse_args()
-
     if args.handler in model_handlers.keys():
         if model_handlers[args.handler] == "text":
             if not args.source_vocab:

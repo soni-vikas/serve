@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+
+  custom_model:
+    container_name: torchserve_${USER}
+    build:
+      context: .
+      dockerfile: docker/custom_model.DockerFile
+    image: torchserve_${USER}
+    volumes:
+      - /tmp:/tmp
+      - /models:/models
+      - /home/vikas/model_store:/model_store
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
